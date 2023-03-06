@@ -1,0 +1,25 @@
+#include <kipr/wombat.h>
+#include <stdlib.h>
+#include <iCreateLibrary.h>
+
+int main()
+{	int left = 0;
+ 	int right = 816;
+ 	int middle = 376;
+    create_connect();
+ 	create_full();
+    enable_servos();
+ 	set_servo_position(1,376);
+    turn(15, 50);
+    driveB(10, 60);
+ 	set_servo_position(1,left);
+ 	msleep(100);
+ 	turn(45,50);
+ 	slowServo(1,right,-3);
+ 	create_drive_direct(-45,-90);
+ 	msleep(2000);
+ 	slowServo(1,left,3);
+ 	lineFollow(0,-70,-50);
+ 	msleep(100);
+    return 0;
+}
